@@ -55,6 +55,8 @@ try:
 except ImportError:
     sys.exit("Missing dependency: pip install pycryptodome")
 
+__version__ = "1.0.0"
+
 MAGIC = b"DJBF"
 FLAG_ECB, FLAG_CBC, FLAG_FASTLZ = 0x01, 0x02, 0x80
 
@@ -371,6 +373,7 @@ def _cmd_info(path):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Cookie Run .djb decryptor")
+    ap.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     ap.add_argument("path", help=".djb file, or a folder with --batch")
     ap.add_argument("-o", "--output", help="output file (single-file mode)")
     ap.add_argument("--batch", metavar="OUTDIR", help="decrypt every *.djb under PATH")
