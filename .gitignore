@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Decrypted / extracted game data (do not commit game assets)
+*.bin
+*.json
+out/
+_decrypted/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
